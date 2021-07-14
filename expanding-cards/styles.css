@@ -1,0 +1,73 @@
+/* add the google font roboto to the css */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;1,400&display=swap');
+
+/* add the box sizing to border-box so everything is in uniform shape */
+*{
+  box-sizing: border-box;
+}
+
+/* Added flex to the whole body
+overflow is hidden */
+body{
+  font-family: 'Roboto', sans-serif, monospace;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0px;
+}
+
+/* display is flex and width is 95 of the viewport */
+.container {
+  display: flex;
+  /* This means 95 % width of the view port */
+  width: 95vw;
+}
+
+/* ease in is the animation controller basically takes the time for the animation
+check MDN for more information Position is relative to the body */
+.panel{
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 90vh;
+  border-radius: 50px;
+  color: white;
+  cursor: pointer;
+  flex: 0.5;
+  margin: 10px;
+  position: relative;
+  -webkit-transition: all 700ms ease-in;
+}
+
+/* position is absolute to fit it in the panel */
+.panel h3{
+  font-size: 24px;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  margin: 0px;
+  opacity: 0;
+}
+
+/* if active the flex the window to 5 units */
+.panel.active{
+  flex: 5;
+}
+
+/* controls animation and opacity of the title of the panel */
+.panel.active h3{
+  opacity: 1;
+  transition: opacity 0.3s ease-in 0.4s
+}
+
+@media (max-width: 480px) {
+  .container{
+    width: 100vw;
+  }
+  /* .panel:nth-of-type(4),
+  .panel:nth-of-type(5){
+    display: none;
+  } */
+}
